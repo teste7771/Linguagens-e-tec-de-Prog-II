@@ -18,11 +18,14 @@ public class metodos {
 		c = leia.nextInt();
 
 		resultado = somarInteirosEntreAeB(a, b);//equacao de soma de A e B(5)
-
 		System.out.println("A Soma dos valores entre A e B é: " + resultado); //exibicao do resultado(6)
+		
+		exibirInteirosEntreAeBDivisiveisPorC(a, b, c);
+		
+		System.out.println("O percentual de C em relacao ao A é: " +percentualdeCemRelacaoAoA(c, a));
 	}
-	
-		//Metodo(3)
+
+	//Metodo(3)
 	public static int somarInteirosEntreAeB (int valorA, int valorB) {
 		int soma = 0;
 		for (int x = valorA + 1; x <= valorB - 1; x++) {
@@ -30,4 +33,16 @@ public class metodos {
 		}
 		return soma; //retorno de soma entre A e B(4)
 	}
-}					
+	public static void exibirInteirosEntreAeBDivisiveisPorC (int valorA, int valorB, int valorC) {
+		for (int x = valorA + 1; x <= valorB -1; x++) {
+			if (x % valorC == 0) {
+				System.out.println("O numero " + x + " é divisivel por " +valorC);
+			}
+		}
+	}
+	public static float percentualdeCemRelacaoAoA (int varC, int varA) {
+		float calculo;
+		calculo = varC * 100 / varA;
+		return calculo;
+	}
+}	
