@@ -1,6 +1,5 @@
-
 //importaçoes
-import java.util.*;
+import java.util.Scanner;
 public class SALARIO {
 
 	
@@ -18,31 +17,31 @@ public class SALARIO {
 		
 		//Entrada de dados
 		for (byte x = 1; x <=10; x++) { //variavel for
-			System.out.println("Digite o nome do empregado");
-			nome = leia.nextLine();
+		System.out.println("Digite o nome do empregado");
+		nome = leia.nextLine();
 			
-			System.out.println("Digite o salario");
-			salario = leia.nextFloat();
+		System.out.println("Digite o salario");
+		salario = leia.nextFloat();
 			
-			System.out.println("Digite o numero de dependentes");
-			numDependentes = leia.nextByte();
+		System.out.println("Digite o numero de dependentes");
+		numDependentes = leia.nextByte();
 			
-			//calculos
-			if (salario < 1000) {
-				novoSalario = salario + (float)1.30;	
-			}else if (salario <=2000) {
-				novoSalario = salario + (float)1.20;
-			}else {
-				novoSalario = salario + (float)1.10;
-			}
-			novoSalario = salario + 50* numDependentes;
+		//calculos
+		if (salario < 1000) {
+			novoSalario = (salario / 100 * 1.30f) + salario;	
+		}else if (salario <=2000) {
+			novoSalario = (salario / 100 * 1.20f) + salario;
+		}else {
+			novoSalario = (salario / 100 * 1.10f) + salario;
+		}
+		        novoSalario = novoSalario + (50* numDependentes);
 			
 			//impressao
-			System.out.println("Novo Salario " + novoSalario);
-			somaSalarios = somaSalarios + novoSalario;
-			if (novoSalario > 1700) {
-				contador1700++;
-			}
+		System.out.println("Novo Salario " + novoSalario);
+		somaSalarios = somaSalarios + novoSalario;
+		if (novoSalario > 1700) {
+			contador1700++;
+		}
 			// Limpar buffer
 			leia.nextLine();
 			
